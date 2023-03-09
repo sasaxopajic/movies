@@ -1,0 +1,14 @@
+<div class="movie container">
+  <img class="image" [src]="movie?.imageUrl" />
+
+  <div class="text">
+    <div class="name">{{ movie?.name }}</div>
+    <div class="description">{{ movie?.description }}</div>
+  </div>
+</div>
+
+<div class="comments container">
+  <div class="comment" *ngFor="let comment of comments">
+    <div>{{ comment.comment }}</div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="main-page">
+  <div class="app-heading">Movies</div>
+  <form [formGroup]="form" (ngSubmit)="applyFilters()" novalidate>
+    <div class="content">
+      <div class="categories">
+        <div class="heading">Filter posts by category</div>
+
+        <div
+          class="category"
+          *ngFor="let category of categories; let i = index"
+        >
+          <mat-checkbox
+            formArrayName="filters"
+            [value]="category.id"
+            (click)="onCheckboxChange($event)"
+          >
+            {{ category.name }}</mat-checkbox
+          >
+        </div>
+      </div>
+      <div class="posts">
+        <div class="heading">Posts</div>
+        <div class="movie-posts">
+          <ng-container *ngFor="let movie of movies">
+            <div class="post" *ngIf="form.value.filters.length === 0">
+              <a class="name" routerLink="../blog-post-page/{{ movie.id }}">{{
+                movie.name
+              }}</a>
+              <div class="description">{{ movie.description }}</div>
+            </div>
+          </ng-container>
+        </div>
+        <div class="movie-posts">
+          <ng-container *ngFor="let movie of movies">
+            <ng-container *ngFor="let filter of form.value.filters">
+              <div class="post" *ngIf="filter == movie.categoryId">
+                <a class="name" routerLink="../blog-post-page/{{ movie.id }}">{{
+                  movie.name
+                }}</a>
+                <div class="description">{{ movie.description }}</div>
+              </div>
+            </ng-container>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

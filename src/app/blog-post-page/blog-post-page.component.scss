@@ -1,0 +1,47 @@
+.movie {
+  display: flex;
+  flex-direction: row;
+  padding: 32px;
+  gap: 16px;
+}
+
+.name {
+  font-size: 24px;
+  font-weight: 600;
+  display: flex;
+  padding: 4px 0px;
+}
+
+.description {
+  font-size: 14px;
+  font-weight: 100;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 8;
+  white-space: pre-wrap;
+}
+
+.image {
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 4px;
+  border: 1px solid #e5e5e5;
+  object-fit: cover;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.comments {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 32px;
+}
+
+.comment{
+    padding: 4px 0px;
+}

@@ -1,0 +1,91 @@
+.main-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-heading {
+  font-size: 24px;
+  font-weight: 600;
+  padding: 32px;
+  background-color: #00000050;
+  display: flex;
+  justify-content: center;
+}
+
+.heading {
+  font-size: 20px;
+  font-weight: 500;
+  padding: 12px 0px;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  padding: 0px 12px;
+}
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.category {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  flex: 3;
+}
+
+.movie-posts {
+  display: flex;
+  flex-direction: row !important;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 300px;
+  min-height: 150px;
+  padding: 16px;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+}
+
+.name {
+  font-weight: 600;
+  text-decoration: none;
+  color: #000000;
+}
+
+.description {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  white-space: pre-wrap;
+  font-size: 13px;
+  font-weight: 100;
+}
+
+@media screen and (max-width: 600px) {
+  .content {
+    flex-direction: column;
+  }
+  .posts,
+  .movie-posts {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+}
